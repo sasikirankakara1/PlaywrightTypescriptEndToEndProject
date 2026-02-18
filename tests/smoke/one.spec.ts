@@ -1,7 +1,6 @@
-import {test,expect} from '@playwright/test'
-
-test('hello',async({page})=>{
-    await page.goto("https://www.google.com")
-    await expect(page).toHaveTitle("Google")
-    await page.pause()
+import {test,expect} from '../fixtures/base'
+test('hello',async({google})=>{
+    await google.page.goto('/')
+    await google.clickAbout()
+    await google.page.pause()
 })
